@@ -1,27 +1,74 @@
-<!-- admin.html -->
-<header>
-    <select id="filterCategory">
-    <option>All</option><option>Auto</option><option>Car</option><option>Truck</option><option>Bus</option>
-  </select>
-    <select id="filterAvailability">
-    <option>All</option><option>Available</option><option>Unavailable</option>
-  </select>
-    <button id="clearFilters">Clear Filter</button>
-</header>
+<!DOCTYPE html>
+<html lang="en">
 
-<aside>
-    <form id="fleetForm">
-        <input id="regNo" placeholder="Reg No" required>
-        <select id="category" required>
-      <option value="">Select</option><option>Auto</option><option>Car</option><option>Truck</option><option>Bus</option>
-    </select>
-        <input id="driver" placeholder="Driver Name" required>
-        <select id="available" required>
-      <option value="">Select</option><option>Available</option><option>Unavailable</option>
-    </select>
-        <button type="submit">Add Fleet</button>
-    </form>
-</aside>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fleet Management Dashboard</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
 
-<main id="cardsContainer"></main>
-<script src="scripts/admin.js"></script>
+<body>
+    <!-- Navbar with filters -->
+    <header class="navbar">
+        <div class="filters">
+            <label for="filterCategory">Category</label>
+            <select id="filterCategory">
+        <option>All</option>
+        <option>Auto</option>
+        <option>Car</option>
+        <option>Truck</option>
+        <option>Bus</option>
+      </select>
+
+            <label for="filterAvailability">Availability</label>
+            <select id="filterAvailability">
+        <option>All</option>
+        <option>Available</option>
+        <option>Unavailable</option>
+      </select>
+
+            <button id="clearFilters">Clear Filter</button>
+        </div>
+    </header>
+
+    <!-- Layout with sidebar and main content -->
+    <div class="layout">
+        <!-- Sidebar form -->
+        <aside class="sidebar">
+            <h2>Add Fleet</h2>
+            <form id="fleetForm">
+                <label for="regNo">Reg No</label>
+                <input type="text" id="regNo" required />
+
+                <label for="category">Category</label>
+                <select id="category" required>
+          <option value="">Select</option>
+          <option>Auto</option>
+          <option>Car</option>
+          <option>Truck</option>
+          <option>Bus</option>
+        </select>
+
+                <label for="driver">Driver Name</label>
+                <input type="text" id="driver" required />
+
+                <label for="available">Is Available</label>
+                <select id="available" required>
+          <option value="">Select</option>
+          <option>Available</option>
+          <option>Unavailable</option>
+        </select>
+
+                <button type="submit">Add Fleet</button>
+            </form>
+        </aside>
+
+        <!-- Main content area for fleet cards -->
+        <main id="cardsContainer" class="cards-grid"></main>
+    </div>
+
+    <script src="scripts/admin.js" defer></script>
+</body>
+
+</html>
