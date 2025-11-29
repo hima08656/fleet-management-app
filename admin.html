@@ -1,0 +1,27 @@
+<!-- admin.html -->
+<header>
+    <select id="filterCategory">
+    <option>All</option><option>Auto</option><option>Car</option><option>Truck</option><option>Bus</option>
+  </select>
+    <select id="filterAvailability">
+    <option>All</option><option>Available</option><option>Unavailable</option>
+  </select>
+    <button id="clearFilters">Clear Filter</button>
+</header>
+
+<aside>
+    <form id="fleetForm">
+        <input id="regNo" placeholder="Reg No" required>
+        <select id="category" required>
+      <option value="">Select</option><option>Auto</option><option>Car</option><option>Truck</option><option>Bus</option>
+    </select>
+        <input id="driver" placeholder="Driver Name" required>
+        <select id="available" required>
+      <option value="">Select</option><option>Available</option><option>Unavailable</option>
+    </select>
+        <button type="submit">Add Fleet</button>
+    </form>
+</aside>
+
+<main id="cardsContainer"></main>
+<script src="scripts/admin.js"></script>
